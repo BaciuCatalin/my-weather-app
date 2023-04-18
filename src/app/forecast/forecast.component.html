@@ -1,0 +1,25 @@
+<div *ngIf="forecastData" class="forecast-table more-info-container">
+  <!-- aici -->
+  <input [(ngModel)]="cityName" placeholder="Enter City Name">
+  <button (click)="getForecast()">Get Current Weather</button>
+  <!-- aici -->
+  <h1>24-Hour Forecast</h1>
+  <ul class="info-block forecast-table">
+    <li  *ngFor="let forecast of forecastData.list | slice:0:9">
+      <p class="hour">{{ forecast.dt_txt }}</p>
+      <p class="hour">{{ forecast.main.temp | number: '1.0-0' }}°C</p>
+    </li>
+  </ul>
+
+  <h1>7-Day Forecast</h1>
+  <ul>
+    <li class="info-block-label" *ngFor="let forecast of forecastData.list">
+      <p>{{ forecast.dt_txt}}</p>
+      <p>{{ forecast.weather[0].description }}</p>
+      <p>{{ forecast.main.temp | number: '1.0-0' }} °C</p>
+    </li>
+  </ul>
+
+  
+
+</div>
