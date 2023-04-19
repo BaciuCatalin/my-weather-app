@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { WeatherData } from '../weather-data.model';
 
@@ -8,19 +8,21 @@ import { WeatherData } from '../weather-data.model';
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit {
+  @Input() weatherData!: WeatherData;
   cityName: string = "Cluj-Napoca";
-  weatherData!: WeatherData;
   favoriteCities: string[] = [];
 
   constructor(private weatherService: WeatherService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCurrentWeather();
+  }
 
   getCurrentWeather() {
     this.weatherService.getWeatherByCityName(this.cityName)
       .subscribe(data => {
         this.weatherData = data;
-      });
+  });
   }
 
   addToFavorites() {
