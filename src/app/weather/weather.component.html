@@ -1,5 +1,10 @@
 <div class="weather-data" *ngIf="weatherData">
-  <p class="location">{{ weatherData.name }}</p>
-  <p class="temperature">{{ weatherData.main.temp | number: '1.0-0' }}°C</p>
-  <p class="description">{{ weatherData.weather[0].description }}</p>
+  <div class="weather-location">
+    <p class="location">{{ weatherData.name }}</p>
+    <img class="icon" [src]="getWeatherIconSrcAnimated(weatherData.weather[0].description)">
+  </div>
+  <div class=weather-temp>
+    <p class="temperature">{{ weatherData.main.temp | number: '1.0-0' }}°C</p>
+    <p class="description">{{ weatherData.weather[0].description }}</p>
+  </div>
 </div>

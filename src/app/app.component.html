@@ -1,6 +1,6 @@
 <div class="search">
   <form #form="ngForm" (submit)="onSubmit()">
-    <input type="text" placeholder="Enter City Name" name="cityName" [(ngModel)]="cityName">
+    <input class="inputClass" type="text" placeholder="Enter City Name" name="cityName" [(ngModel)]="cityName">
   </form>
   <!-- <button (click)="addToFavorites()">Add to Favorites</button> -->
 </div>
@@ -9,7 +9,8 @@
     <app-weather [weatherData]="weatherData"></app-weather>
   </div>
   <div class="lower-data">
-    <app-forecast class="more-info-container" [forecastData]="forecastData"></app-forecast>
+    <app-forecast class="more-info-container" [forecastData]="forecastData" [forecastData7]="forecastData7">
+    </app-forecast>
   </div>
 </div>
 <app-favorites></app-favorites>

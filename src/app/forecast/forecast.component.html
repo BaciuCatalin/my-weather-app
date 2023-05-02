@@ -1,49 +1,42 @@
 <div class="weather-forecast" *ngIf="forecastData">
   <div class="forecast-header">
-    <h3>24hours</h3>
-    <!-- <button class="btn btn-secondary" (click)="onHourChange(-1)">&lt;</button>
-      <button class="btn btn-secondary" (click)="onHourChange(1)">&gt;</button> -->
   </div>
   <div class="forecast-display">
+    <h3>24hours</h3>
     <div class="hour-cards-wrapper" id="hour-cards-wrapper">
-      <ul>
-        <li class="hour-card" *ngFor="let hour of hours" [ngClass]="{'active': hour === activeHour}">
-          <div class="hour">{{ hour }}:00</div>
-          <div class="icon">
-            <!-- <img src="https://www.weatherbit.io/static/img/icons/{{forecast[hour].icon}}.png" alt="{{forecast[hour].description}}"> -->
-          </div>
-          <!-- <div class="temperature">{{forecast[hour].temperature}}&deg;C</div> -->
-          <div *ngFor="let forecast of forecastData.list | slice:0:1">
-            <!-- <p class="hour">{{ forecast.dt_txt }}</p> -->
-            <p class="temperature">{{ forecast.main.temp | number: '1.0-0' }}°C</p>
-          </div>
+      <ul class="hour-card" *ngFor="let forecast of forecastData.data">
+        <li>
+          <p class="hour">{{forecast.datetime | slice:-2}}</p>
+          <img class="icon" [src]="getWeatherIconSrc(forecast.weather.description)">
+          <p class="temperature">{{ forecast.temp | number: '1.0-0' }}°C</p>
+          <!-- <ul>
+            <li class="hour" *ngFor="let hour of hours | slice:0:1" [ngClass]="{'active': hour === activeHour}">{{ hour }}:00</li> 
+          </ul> -->
         </li>
       </ul>
     </div>
     <button type="button" class="scroll-button left-button" (click)="scrollHourCards(-1)">&lt;</button>
     <button type="button" class="scroll-button right-button" (click)="scrollHourCards(1)">&gt;</button>
+    <button type="button" class="scroll-button right-button" (click)="scrollHourCards(1)">&gt;</button> 
   </div>
   <div>
     <div class="forecast-header">
       <h3>7-day forecast</h3>
+      <p>min/max °C</p>
     </div>
     <div class="forecast-display-7days">
       <ul>
-        <li class="forecast-display-days" *ngFor="let forecast of forecastData.list | slice:0:7">
-          <div class="hour">{{ forecast.dt_txt}}</div>
-          <p class="description">{{ forecast.weather[0].description }}</p>
-          <div class="temperature">{{ forecast.main.temp | number: '1.0-0' }} °C</div>
+        <li class="forecast-display-days" *ngFor="let forecast of forecastData7.data | slice:0:7">
+          <div class="mere">
+            <p class="day">{{ getDayOfWeek(forecast.datetime) }}</p>
+            <div class="icon">
+              <img class="icon" [src]="getWeatherIconSrc(forecast.weather.description)">
+            </div>
+          </div>
+          <div class="temperature">{{ forecast.min_temp | number: '1.0-0' }} / {{ forecast.max_temp | number: '1.0-0' }}
+            °C</div>
         </li>
       </ul>
     </div>
   </div>
 </div>
-
-<!-- <h1>24-Hour Forecast</h1>
-<ul class="info-block forecast-table">
-  <li  *ngFor="let forecast of forecastData.list | slice:0:7">
-    <p class="hour">{{ forecast.dt_txt }}</p>
-    <p class="hour">{{ forecast.main.temp | number: '1.0-0' }}°C</p>
-  </li>
-</ul> -->
-<!-- </div> -->

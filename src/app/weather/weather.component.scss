@@ -15,14 +15,21 @@
     height: 100%;
     background-color: var(--blue-2);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+.weather-location {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .location {
     text-align: center;
-    margin-top: 1em;
+    margin-top: 2em;
     margin-bottom: 1em;
     font-size: 1em;
     text-decoration: solid;
@@ -30,14 +37,21 @@
 
 .description {
   font-size: 1em;
-  text-align: center;
+  text-align: start ;
   text-transform: capitalize;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-.temperature{
+.temperature {
     font-size: 3em;
     text-align: center;
     font-weight: 900;
+}
+
+img {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  
 }
