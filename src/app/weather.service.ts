@@ -28,7 +28,6 @@ export class WeatherService {
 
   // getForecastByCityName(cityName: string): Observable<ForecastData> {
   //   const url = `${this.owm_url}/forecast?q=${cityName}&appid=${this.owm_key}&units=metric`;
-  //   // return this.http.get(url);
   //   return this.http.get<ForecastData>(url);
   // }
   
@@ -38,21 +37,8 @@ export class WeatherService {
   }
   getForecastByCity7Days(cityName: string): Observable<ForecastData7> {
     const url_7days = `${this.api_url}?city=${cityName}&key=${this.api_key}&days[7]`;
-    // return this.http.get(url);
     return this.http.get<ForecastData7>(url_7days);
   }
-  
+ 
 
-  // "https://www.weatherbit.io/static/img/animated-icons/cloudy-day-2.svg"
-  // <!-- /static/img/animated-icons/cloudy-day-2.svg -->
-  // <!-- /static/img/animated-icons/cloudy.svg -->
-  // <!-- /static/img/animated-icons/night.svg -->
-  // <!-- /static/img/animated-icons/rainy-3.sv -->
-  // <!-- /static/img/animated-icons/day.svg -->
-  // <!-- /static/img/animated-icons/rainy-6.svg -->
-  // <!-- /static/img/animated-icons/snowy-4.svg -->
-  // <!-- /static/img/animated-icons/snowy-5.svg -->
-  // <!-- /static/img/animated-icons/snowy-6.svg -->
-  // <!-- /static/img/animated-icons/rainy-5.svg -->
-  // <!-- /static/img/animated-icons/thunder.svg -->
 }
