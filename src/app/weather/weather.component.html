@@ -1,12 +1,10 @@
-<div class="search">
-    <input [(ngModel)]="cityName" placeholder="Enter City Name">
-    <button (click)="getCurrentWeather()">Get Current Weather</button>
-    <button (click)="addToFavorites()">Add to Favorites</button>
+<div class="weather-data" *ngIf="weatherData">
+  <div class="weather-location">
+    <p class="location">{{ weatherData.name }}</p>
+    <img class="icon" [src]="getWeatherIconSrcAnimated(weatherData.weather[0].description)">
   </div>
-  
-  <div class="weather-info" *ngIf="weatherData">
-    <p class="location" >{{ weatherData.city }}</p>
-    <p class="temperature" >{{ weatherData.main.temp | number: '1.0-0' }}°C</p>
-    <p class="temperature"> {{weatherData.description}}</p>
+  <div class=weather-temp>
+    <p class="temperature">{{ weatherData.main.temp | number: '1.0-0' }}°C</p>
+    <p class="description">{{ weatherData.weather[0].description }}</p>
   </div>
-  
+</div>

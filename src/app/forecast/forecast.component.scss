@@ -1,0 +1,226 @@
+:root {
+    --blue-1: #0023f5;
+    --blue-2: #001dcc;
+    --yellow-1: #ccc511;
+    --white: #fff;
+    --grey-1: #c0c0c0;
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --shadow-ligt: rgba(255, 255, 255, 0.1);
+  }
+
+.weather-forecast {
+  background-color: var(--blue-2
+  );
+  max-width: 400px;
+  margin: 0px;
+  padding: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.forecast-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forecast-header h3 {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+// .forecast-header .btn {
+//   border: none;
+//   border-radius: 5px;
+//   padding: 5px;
+//   color:var(--blue-1);
+//   font-size: 16px;
+//   text-align: center;
+//   cursor: pointer;
+//   text-decoration: solid;
+//   background-color: var(--blue-1);
+//   transition: background-color 0.3s;
+// }
+
+// .forecast-header .btn:hover {
+//   background-color: var(--blue-2);
+//   color: var(--white);
+// }
+
+.forecast-display {
+  position: relative;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 20px;
+  
+}
+
+.forecast-display .scroll-button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: 6px;
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.forecast-display .scroll-button:hover {
+  color: transparent;
+  cursor: pointer;
+}
+
+.forecast-display .left-button {
+  left: 0;
+}
+
+.forecast-display .right-button {
+  right: 0;
+}
+
+.forecast-display ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.forecast-display li {
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.forecast-display li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.forecast-display li.active {
+  background-color: #1e90ff;
+  color: black
+}
+
+.forecast-display li .hour {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-bottom: 10px
+  }
+
+  .forecast-display li .day {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 55px;
+    }
+
+.forecast-display li .icon {
+  margin-top: 0px;
+}
+
+img {
+  margin-left: 2em;
+  width: 2rem;
+  height: 2rem;
+}
+
+.forecast-display li .temperature {
+  font-size: 0.8em;;
+  margin-top: 10px;
+}
+
+.hour-cards-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hour-cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.forecast-display-7days{
+  background-color: var(--blue-2);
+  color: var(--white);
+  margin-top: 20px;
+  width: 100%;
+  position: relative;
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.forecast-display-days{
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin-top: 14px;
+padding: 10px 5px 0 5px;
+}
+
+.forecast-display-days ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.forecast-display-7days li{
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.forecast-display-7days li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.forecast-display-7days li:first-child {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.forecast-display-7days li .temperature {
+  font-size: 0.8em;;
+  margin-top: 10px;
+}
+
+.forecast-display-7days li .hour {
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  }
+
+
+  .forecast-display-7days li .description {
+    font-size: 0.8em;;
+    margin-top: 5px;
+  }
+
+.mere{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+

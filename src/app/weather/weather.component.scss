@@ -1,0 +1,57 @@
+:root {
+    --blue-1: #0023f5;
+    --blue-2: #001dcc;
+    --yellow-1: #ccc511;
+    --white: #fff;
+    --grey-1: #c0c0c0;
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --shadow-ligt: rgba(255, 255, 255, 0.1);
+  } // de schimbat :root
+
+.weather-data {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue-2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.weather-location {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.location {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    text-decoration: solid;
+}
+
+.description {
+  font-size: 1em;
+  text-align: start ;
+  text-transform: capitalize;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.temperature {
+    font-size: 3em;
+    text-align: center;
+    font-weight: 900;
+}
+
+img {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  
+}
